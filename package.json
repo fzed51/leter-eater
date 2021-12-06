@@ -1,0 +1,17 @@
+{
+  "name": "letter-eater",
+  "version": "1.0.0-alpha",
+  "description": "Jeu de lecture.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --mode production",
+    "dev": "webpack-dev-server --mode development --hot --open"
+  },
+  "author": "Fabien Sanchez <fzed51+git@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@fzed51/webpack-config": "^3.1.0",
+    "raw-loader": "^4.0.2"
+  }
+}
