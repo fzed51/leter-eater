@@ -1,4 +1,4 @@
-import React, { FC, useState, useEffect, useRef } from "react";
+import React, { FC, useState, useEffect, SyntheticEvent } from "react";
 import { SpeedTotem } from "../speed";
 export interface LeterEaterProps {
   speed: SpeedTotem;
@@ -25,13 +25,17 @@ const LeterEater: FC<LeterEaterProps> = ({ speed, text }) => {
     setRun(!run);
   };
 
+  const handleGoBack = (e: SyntheticEvent) => {
+    e.preventDefault();
+    setPosition(0);
+  };
   const readed = text.substring(0, Math.min(lTxt, position));
   const read = text.substring(Math.min(lTxt, position), lTxt);
 
   return (
     <div className="leter-eater-container">
       <nav>
-        <button>⏮</button>
+        <button onClick={handleGoBack}>⏮</button>
         <button onClick={toggleRun}>{run ? "⏸" : "▶"}</button>({position}/{lTxt}
         )
       </nav>
