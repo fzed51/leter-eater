@@ -1,6 +1,8 @@
 import React, { FC, useState, SyntheticEvent } from "react";
 import LeterEater from "./leter-eater";
 import { cochon, lapin, SpeedTotem } from "./speed";
+import { load, store } from "../tools/storage";
+import { Text } from "./text";
 import "./style.scss";
 // ./app.d.ts
 
@@ -10,25 +12,35 @@ const App: FC = () => {
   const [speed, setSpeed] = useState<SpeedTotem>(cochon);
   const [text, setText] = useState<string>("");
 
+  const texts = load<Text[]>("texts", []);
+
   const handleSetSpeed = (s: SpeedTotem) => (e: SyntheticEvent) => {
     e.preventDefault();
     setSpeed(s);
   };
 
-  const handleSetText = (e: SyntheticEvent) => {
+  const handleSetText = (ref: string) => (e: SyntheticEvent) => {
     e.preventDefault();
-    import("./textes/racine.txt").then((module) => {
-      setText(module.default);
-    });
+    setText(load<string>(ref, ""));
+  };
+
+  const handleAddText = (e: SyntheticEvent) => {
+    e.preventDefault();
+    setText(load<string>(ref, ""));
   };
 
   return (
     <div className="leter-eater-app">
       <div>
         <ul>
-          <li>
             <button onClick={handleSetText}>racine</button>
-          </li>
+          {texts.map((txt, idx) => {
+            return (
+              <li key={idx}>
+                <button onClick={handleSetText(txt.ref)}>{txt.title}</button>
+              </li>
+            );
+          })}
         </ul>
       </div>
       <div>
