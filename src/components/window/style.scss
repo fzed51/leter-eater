@@ -20,6 +20,8 @@ body,
   overflow-y: auto;
 
   & > .window-header {
+    background-color: blueviolet;
+    color: #eee;
   }
   & > .window-content {
     width: 100%;

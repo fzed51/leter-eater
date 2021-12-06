@@ -1,8 +1,9 @@
 import React, { FC, useState, SyntheticEvent } from "react";
 import LeterEater from "../../components/leter-eater";
 import speeds, { cochon, lapin, SpeedTotem } from "../../components/speed";
-import { load, store } from "../../tools/storage";
+import { load } from "../../tools/storage";
 import { Text } from "../../components/text";
+import "./style.scss";
 
 const Game: FC = () => {
   const [speed, setSpeed] = useState<SpeedTotem>(cochon);
