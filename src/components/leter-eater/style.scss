@@ -1,0 +1,39 @@
+.leter-eater {
+  & > .leter-eater--command {
+  }
+
+  & > .leter-eater--text-container {
+    $bgColor: #eee;
+    position: relative;
+    background-color: $bgColor;
+    & > .leter-eater--text,
+    & > .leter-eater--mask {
+      white-space: pre-line;
+      font-family: "OpenDyslexic";
+      font-size: 0.7cm;
+      margin: auto;
+      position: relative;
+
+      .leter-eater--leter {
+        user-select: none;
+      }
+      .leter-eater--eated {
+        color: transparent;
+        background-color: $bgColor;
+        user-select: none;
+      }
+      .leter-eater--head {
+        position: absolute;
+        transition: all 0.2s;
+        margin-top: -0.5em;
+        margin-left: -1.3em;
+        font-size: 2em;
+      }
+    }
+    & > .leter-eater--mask {
+      top: 0;
+      left: 0;
+      position: absolute;
+    }
+  }
+}
