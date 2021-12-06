@@ -1,12 +1,10 @@
 import React, { FC, useState, SyntheticEvent } from "react";
 import LeterEater from "./leter-eater";
-import { cochon, lapin, SpeedTotem } from "./speed";
+import speeds, { cochon, lapin, SpeedTotem } from "./speed";
 import { load, store } from "../tools/storage";
 import { Text } from "./text";
 import "./style.scss";
 // ./app.d.ts
-
-const speeds: SpeedTotem[] = [cochon, lapin];
 
 const App: FC = () => {
   const [speed, setSpeed] = useState<SpeedTotem>(cochon);
