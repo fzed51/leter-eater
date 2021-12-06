@@ -22,4 +22,24 @@ export const dragon: SpeedTotem = {
   speed: 300,
 };
 
-export default [cochon, lapin, dragon];
+export const chat: SpeedTotem = {
+  name: "chat",
+  head: "🐱",
+  speed: 150,
+};
+
+export const licorne: SpeedTotem = {
+  name: "licorne",
+  head: "🦄",
+  speed: 75,
+};
+
+export const souris: SpeedTotem = {
+  name: "souris",
+  head: "🐁",
+  speed: 50,
+};
+
+export default [dragon, cochon, chat, lapin, licorne, souris].sort(
+  (a, b) => a.speed - b.speed
+);
