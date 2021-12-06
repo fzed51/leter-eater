@@ -1,0 +1,10 @@
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: stretch;
+  align-content: center;
+
+  position: relative;
+  margin: 0.5em 2em 1em;
+}
