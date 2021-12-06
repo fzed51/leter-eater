@@ -1,6 +1,7 @@
 import React, { FC, useState, SyntheticEvent } from "react";
 import LeterEater from "./leter-eater";
 import { cochon, lapin, SpeedTotem } from "./speed";
+import "./style.scss";
 // ./app.d.ts
 
 const speeds: SpeedTotem[] = [cochon, lapin];
