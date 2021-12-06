@@ -12,47 +12,51 @@ const Table: FC<TableProps> = ({ texts, onAdd, onEdit, onDelete }) => {
   return (
     <div>
       <table>
-        <tr>
-          <th>titre</th>
-          <th>
-            action{" "}
-            <button
-              onClick={(e) => {
-                e.preventDefault();
-                onAdd();
-              }}
-            >
-              ➕
-            </button>
-          </th>
-        </tr>
-        {texts.map((text, idx) => {
-          return (
-            <tr key={idx}>
-              <td>{text.title}</td>
-              <td>
-                <button
-                  onClick={(e) => {
-                    e.preventDefault();
-                    onEdit(text);
-                  }}
-                >
-                  ✏
-                </button>
-                <button
-                  onClick={(e) => {
-                    e.preventDefault();
-                    if (confirm("Voulez-vous supprimer ce texte")) {
-                      onDelete(text);
-                    }
-                  }}
-                >
-                  🗑
-                </button>
-              </td>
-            </tr>
-          );
-        })}
+        <thead>
+          <tr>
+            <th>titre</th>
+            <th>
+              action{" "}
+              <button
+                onClick={(e) => {
+                  e.preventDefault();
+                  onAdd();
+                }}
+              >
+                ➕
+              </button>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          {texts.map((text, idx) => {
+            return (
+              <tr key={idx}>
+                <td>{text.title}</td>
+                <td>
+                  <button
+                    onClick={(e) => {
+                      e.preventDefault();
+                      onEdit(text);
+                    }}
+                  >
+                    ✏
+                  </button>
+                  <button
+                    onClick={(e) => {
+                      e.preventDefault();
+                      if (confirm("Voulez-vous supprimer ce texte")) {
+                        onDelete(text);
+                      }
+                    }}
+                  >
+                    🗑
+                  </button>
+                </td>
+              </tr>
+            );
+          })}
+        </tbody>
       </table>
     </div>
   );
